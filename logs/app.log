@@ -1,0 +1,208 @@
+[2025-07-25 18:04:36] [main] INFO  com.example.main.Example - Example::Main::Input::Employee=Employee [name=kiran, department=Java, salary=1234241.0]
+[2025-07-25 18:04:36] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.33.Final
+[2025-07-25 18:06:32] [main] INFO  com.example.main.Example - Example::Main::Input::
+[2025-07-25 18:06:33] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.33.Final
+[2025-07-25 18:06:33] [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2025-07-25 18:06:34] [main] INFO  org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: com.zaxxer.hikari.hibernate.HikariConnectionProvider
+[2025-07-25 18:06:34] [main] WARN  com.zaxxer.hikari.hibernate.HikariConnectionProvider - com.zaxxer.hikari.hibernate.HikariConnectionProvider has been deprecated for versions of Hibernate 4.3.6 and newer.  Please switch to org.hibernate.hikaricp.internal.HikariCPConnectionProvider.
+[2025-07-25 18:06:34] [main] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+[2025-07-25 18:06:34] [main] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+[2025-07-25 18:06:34] [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2025-07-25 18:06:35] [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2025-07-25 18:06:35] [main] INFO  com.example.main.Example - Example::Main::output::id=1
+[2025-07-25 18:12:39] [main] INFO  com.example.main.Example - Example::Main::Input::
+[2025-07-25 18:12:42] [main] INFO  com.example.main.Example - Example::Main::output::id=1
+[2025-07-25 18:16:42] [main] INFO  com.example.main.Example - Example::Main::Input::employee=Employee [name=rajitha, department=home, salary=252532.0]
+[2025-07-25 18:16:44] [main] INFO  com.example.main.Example - Example::Main::output::id=1
+[2025-07-25 18:17:18] [main] INFO  com.example.main.Example - Example::Main::Input::employee=Employee [name=kiran, department=java, salary=12345.0]
+[2025-07-25 18:17:20] [main] INFO  com.example.main.Example - Example::Main::output::id=2
+[2025-07-25 18:21:49] [main] INFO  com.example.main.Example - Example::Main::Input::employee=Employee [name=vinay, department=java, salary=12345.0]
+[2025-07-25 18:21:52] [main] INFO  com.example.main.Example - Example::Main::output::id=3
+[2025-07-25 18:22:50] [main] INFO  com.example.main.Example - Example::Main::Input::employee=Employee [name=hanumantha rao, department=home, salary=24234.0]
+[2025-07-25 18:22:50] [main] DEBUG com.example.main.Example - Example::Main::Input::password=hanumantharao@12
+[2025-07-25 18:22:53] [main] INFO  com.example.main.Example - Example::Main::output::id=4
+[2025-07-25 18:38:11] [main] INFO  com.example.main.Example - Example::Main::Input::employee=Employee [name=Shiva, department=GOD, salary=124124.0]
+[2025-07-25 18:38:14] [main] INFO  com.example.main.Example - Example::Main::output::id=5
+[2025-07-26 10:25:54] [main] INFO  com.example.main.Example - Example::Main::output::Employee [name=hanumantha rao, department=home, salary=24234.0]
+[2025-07-26 10:27:00] [main] INFO  com.example.main.Example - Example::Main::output::null
+[2025-07-26 10:33:00] [main] INFO  com.example.main.Example - Example::Main::output::Employee [name=hanumantha rao, department=home, salary=24234.0]
+[2025-07-26 10:35:43] [main] INFO  com.example.main.Example - Example::Main::output::[24234.0]
+[2025-07-26 10:41:11] [main] INFO  com.example.main.Example - Example::Main::output::Shiva
+[2025-07-26 10:52:57] [main] INFO  com.example.main.Example - Example::Main::output::vinay
+[2025-07-26 10:53:08] [main] INFO  com.example.main.Example - Example::Main::output::Shiva
+[2025-07-27 15:16:20] INFO  - ATSServiceImpl::login::Input::username=kiran
+[2025-07-27 15:16:20] INFO  - ATSServiceImpl::login::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 15:16:20] INFO  - ATSServiceImpl::login::output::isUserExist=true
+[2025-07-27 15:17:57] INFO  - ATSServiceImpl::login::Input::username=kiran
+[2025-07-27 15:17:57] INFO  - ATSServiceImpl::login::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 15:17:57] INFO  - ATSServiceImpl::login::output::isUserExist=true
+[2025-07-27 15:45:49] INFO  - ATSServiceImpl::checkEmailExists::input::email=kiranmanukonda@gmail.com
+[2025-07-27 15:45:49] INFO  - ATSServiceImpl::checkEmailExists::output::isEmailExits=true
+[2025-07-27 15:46:05] INFO  - ATSServiceImpl::checkEmailExists::input::email=kiran@gmail.com
+[2025-07-27 15:46:05] INFO  - ATSServiceImpl::checkEmailExists::output::isEmailExits=false
+[2025-07-27 19:04:03] INFO  - ATSServiceImpl::chechUsernameExists::input::username=kiran
+[2025-07-27 19:04:03] INFO  - ATSServiceImpl::chechUsernameExists::output::isUsernameExits=true
+[2025-07-27 19:12:08] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:12:08] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:12:46] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:12:48] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:13:48] INFO  - ATSServiceImpl::checkEmailExists::input::email=kiran@gmail.com
+[2025-07-27 19:13:50] INFO  - ATSServiceImpl::checkEmailExists::output::isEmailExits=false
+[2025-07-27 19:14:10] INFO  - ATSServiceImpl::chechUsernameExists::input::username=kiran
+[2025-07-27 19:14:12] INFO  - ATSServiceImpl::chechUsernameExists::output::isUsernameExits=true
+[2025-07-27 19:32:36] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:32:38] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:32:38] INFO  - ATSServiceImpl::addApplication::input::Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]
+[2025-07-27 19:32:38] ERROR - ATSServiceImpl::saveOrUpdate::Exception::javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotBlank' validating type 'java.time.LocalDate'. Check configuration for 'appliedDate'
+javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotBlank' validating type 'java.time.LocalDate'. Check configuration for 'appliedDate'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-6.2.5.Final.jar:6.2.5.Final]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:116) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:214) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:100) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[?:1.8.0_452]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:99) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:448) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.saveOrUpdate(ATSServiceImplModified.java:262) ~[classes/:?]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.addApplication(ATSServiceImplModified.java:126) ~[classes/:?]
+	at com.sri.ats.main.AddApplicationMain.main(AddApplicationMain.java:37) ~[classes/:?]
+[2025-07-27 19:32:38] INFO  - ATSServiceImpl::addApplication::output::isadded=false
+[2025-07-27 19:37:18] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:37:20] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:37:20] INFO  - ATSServiceImpl::addApplication::input::Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]
+[2025-07-27 19:37:20] ERROR - ATSServiceImpl::saveOrUpdate::Exception::javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1366) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:448) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.saveOrUpdate(ATSServiceImplModified.java:262) ~[classes/:?]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.addApplication(ATSServiceImplModified.java:126) ~[classes/:?]
+	at com.sri.ats.main.AddApplicationMain.main(AddApplicationMain.java:37) ~[classes/:?]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3298) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3825) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[?:1.8.0_452]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:99) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	... 11 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'notes' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1350) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.26.jar:8.0.26]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3298) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3825) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[?:1.8.0_452]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:99) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	... 11 more
+[2025-07-27 19:37:20] INFO  - ATSServiceImpl::addApplication::output::isadded=false
+[2025-07-27 19:41:11] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:41:13] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:41:13] INFO  - ATSServiceImpl::addApplication::input::Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]
+[2025-07-27 19:41:13] INFO  - ATSServiceImpl::addApplication::output::isadded=true
+[2025-07-27 19:46:36] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:46:38] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:46:38] INFO  - ATSServiceImpl::addApplication::input::Application [ companyName=finxsta, jobTitle=Intern, appliedDate=2025-07-10, status=selected for the interview, notes=null]
+[2025-07-27 19:46:38] INFO  - ATSServiceImpl::addApplication::output::isadded=true
+[2025-07-27 19:50:07] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:50:09] ERROR - ATSServiceImpl::getMultipleObjects::Exception::java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: FROMApplication near line 1, column 1 [FROMApplication t where t.user.id =userId]
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: FROMApplication near line 1, column 1 [FROMApplication t where t.user.id =userId]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:734) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:825) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.getMultipleObjects(ATSServiceImplModified.java:321) ~[classes/:?]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.getApplicationsByUserId(ATSServiceImplModified.java:163) ~[classes/:?]
+	at com.sri.ats.main.AddApplicationMain.main(AddApplicationMain.java:21) ~[classes/:?]
+Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: FROMApplication near line 1, column 1 [FROMApplication t where t.user.id =userId]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.hql.internal.ast.ErrorTracker.throwQueryException(ErrorTracker.java:93) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:301) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:613) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:725) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	... 5 more
+[2025-07-27 19:50:09] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[]
+[2025-07-27 19:51:22] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:51:24] ERROR - ATSServiceImpl::getMultipleObjects::Exception::java.lang.IllegalArgumentException: Could not locate named parameter [userId], expecting one of []
+java.lang.IllegalArgumentException: Could not locate named parameter [userId], expecting one of []
+	at org.hibernate.query.internal.ParameterMetadataImpl.getNamedParameterDescriptor(ParameterMetadataImpl.java:229) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.query.internal.ParameterMetadataImpl.getQueryParameter(ParameterMetadataImpl.java:198) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.query.internal.QueryParameterBindingsImpl.getBinding(QueryParameterBindingsImpl.java:189) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.setParameter(AbstractProducedQuery.java:494) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.setParameter(AbstractProducedQuery.java:115) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.getMultipleObjects(ATSServiceImplModified.java:321) ~[classes/:?]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.getApplicationsByUserId(ATSServiceImplModified.java:163) ~[classes/:?]
+	at com.sri.ats.main.AddApplicationMain.main(AddApplicationMain.java:21) ~[classes/:?]
+[2025-07-27 19:51:24] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[]
+[2025-07-27 19:54:44] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:54:46] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null], Application [ companyName=finxsta, jobTitle=Intern, appliedDate=2025-07-10, status=selected for the interview, notes=null]]
+[2025-07-27 19:57:34] INFO  - ATSServiceImpl::getUser::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:57:36] INFO  - ATSServiceImpl::getUser::output::User [ fristName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran]
+[2025-07-27 19:57:36] INFO  - ATSServiceImpl::addApplication::input::Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]
+[2025-07-27 19:57:36] INFO  - ATSServiceImpl::addApplication::output::isadded=true
+[2025-07-27 19:58:22] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 19:58:25] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null], Application [ companyName=finxsta, jobTitle=Intern, appliedDate=2025-07-10, status=selected for the interview, notes=null], Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]]

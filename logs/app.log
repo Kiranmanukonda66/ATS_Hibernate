@@ -206,3 +206,31 @@ java.lang.IllegalArgumentException: Could not locate named parameter [userId], e
 [2025-07-27 19:57:36] INFO  - ATSServiceImpl::addApplication::output::isadded=true
 [2025-07-27 19:58:22] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
 [2025-07-27 19:58:25] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null], Application [ companyName=finxsta, jobTitle=Intern, appliedDate=2025-07-10, status=selected for the interview, notes=null], Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]]
+[2025-07-27 20:15:51] INFO  - ATSServiceImpl::getApplicationsByUserId::input::userId=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-27 20:15:53] INFO  - ATSServiceImpl::getApplicationsByUserId::output::[Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null], Application [ companyName=finxsta, jobTitle=Intern, appliedDate=2025-07-10, status=selected for the interview, notes=null], Application [ companyName=google, jobTitle=SDE-I, appliedDate=2025-07-27, status=just applied, notes=null]]
+[2025-07-28 12:05:46] INFO  - ATSServiceImpl::registration::input::User [firstName=vinay, middleName=null, lastName=manukonda, email=vinay@gmail.com, username=vinay, otp=null, otpGeneratedTime=null, otpVerified=no, emialVerified=no]
+[2025-07-28 12:05:46] INFO  - ATSServiceImpl::registration::output::issaveOrUpdate=true
+[2025-07-28 12:35:23] INFO  - ATSServiceImpl::generateOtp::input::id=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-28 12:35:23] INFO  - ATSServiceImpl::generateOtp::output::User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=null, otpGeneratedTime=null, otpVerified=no, emialVerified=no]
+[2025-07-28 12:35:23] INFO  - ATSServiceImpl::generateOtp::input::Optional[User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=834500, otpGeneratedTime=2025-07-28 12:35:23.364, otpVerified=no, emialVerified=no]]
+[2025-07-28 12:35:23] ERROR - ATSServiceImpl::generateOtp::Exception:java.lang.IllegalStateException: org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl@2aa7399c is closed
+java.lang.IllegalStateException: org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl@2aa7399c is closed
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.errorIfClosed(AbstractLogicalConnectionImplementor.java:37) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:137) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:276) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.rollback(AbstractLogicalConnectionImplementor.java:121) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.rollback(JdbcResourceLocalTransactionCoordinatorImpl.java:304) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.rollback(TransactionImpl.java:142) ~[hibernate-core-5.4.33.Final.jar:5.4.33.Final]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.saveOrUpdate(ATSServiceImplModified.java:267) ~[classes/:?]
+	at com.sri.ats.service.Impl.ATSServiceImplModified.generateOtp(ATSServiceImplModified.java:114) ~[classes/:?]
+	at com.sri.ats.main.LoginMain.main(LoginMain.java:13) ~[classes/:?]
+[2025-07-28 12:40:05] INFO  - ATSServiceImpl::generateOtp::input::id=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-28 12:40:05] INFO  - ATSServiceImpl::generateOtp::output::User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=null, otpGeneratedTime=null, otpVerified=no, emialVerified=no]
+[2025-07-28 12:40:05] INFO  - ATSServiceImpl::generateOtp::input::User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=405190, otpGeneratedTime=2025-07-28 12:40:05.56, otpVerified=no, emialVerified=no]
+[2025-07-28 12:40:05] INFO  - ATSServiceImpl::generateOtp::output::issaveOrUpdate=true
+[2025-07-28 12:41:04] INFO  - ATSServiceImpl::verifyOtp::input::otp=405190,userid=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-28 12:41:06] INFO  - ATSServiceImpl::verifyOtp::input::id=cab0fd4f-7995-4ed0-9019-b446f274540b
+[2025-07-28 12:41:06] INFO  - ATSServiceImpl::verifyOtp::output::User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=405190, otpGeneratedTime=2025-07-28 12:40:06.0, otpVerified=no, emialVerified=no]
+[2025-07-28 12:41:06] INFO  - ATSServiceImpl::verifyOtp::input::User [firstName=kiran, middleName=null, lastName=manukonda, email=kiranmanukonda@gmail.com, username=kiran, otp=405190, otpGeneratedTime=2025-07-28 12:40:06.0, otpVerified=yes, emialVerified=no]
+[2025-07-28 12:41:06] INFO  - ATSServiceImpl::verifyOtp::output::issaveOrUpdate=true
+[2025-07-28 12:41:06] INFO  - ATSServiceImpl::verifyOtp::output::otpVerified=true

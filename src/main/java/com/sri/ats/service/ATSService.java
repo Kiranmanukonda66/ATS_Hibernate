@@ -23,6 +23,10 @@ public interface ATSService {
 
 	boolean checkEmailExists(String email);
 
+	String generateOtp(String userId);
+
+	boolean verifyOtp(String otp, String userId);
+
 	// application services
 
 	boolean addApplication(Application application);
@@ -31,7 +35,7 @@ public interface ATSService {
 
 	boolean deleteApplication(String appId);
 
-	Optional<List<Application>> getApplicationsByUserId(String userId,int pageNumber,int pageSize);
+	Optional<List<Application>> getApplicationsByUserId(String userId, int pageNumber, int pageSize);
 
 	Optional<Application> getApplication(String appId);
 
@@ -45,6 +49,6 @@ public interface ATSService {
 
 	Optional<Interview> getInterview(String id);
 
-	Optional<List<Interview>> getInterviewByUserId(String userId,int pageNumber, int pageSize);
+	Optional<List<Interview>> getInterviewByUserId(String userId, int pageNumber, int pageSize);
 
 }

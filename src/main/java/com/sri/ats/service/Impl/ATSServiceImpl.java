@@ -509,4 +509,16 @@ public class ATSServiceImpl implements ATSService {
 
 	}
 
+	@Override
+	public String generateOtp(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean verifyOtp(String otp, String userId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

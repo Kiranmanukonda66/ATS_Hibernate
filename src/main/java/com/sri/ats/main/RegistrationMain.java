@@ -2,7 +2,7 @@ package com.sri.ats.main;
 
 import com.sri.ats.bean.User;
 import com.sri.ats.service.ATSService;
-import com.sri.ats.service.Impl.ATSServiceImpl;
+import com.sri.ats.service.Impl.ATSServiceImplModified;
 
 public class RegistrationMain {
 
@@ -11,14 +11,14 @@ public class RegistrationMain {
 
 		User user = new User();
 
-		user.setFirstName("kiran");
+		user.setFirstName("vinay");
 		user.setLastName("manukonda");
-		user.setEmail("kiranmanukonda@gmail.com");
-		user.setUsername("kiran");
-		user.setPassword("kiran12");
-		user.setMobile("7893164676");
+		user.setEmail("vinay@gmail.com");
+		user.setUsername("vinay");
+		user.setPassword("vinay12");
+		user.setMobile("6302131671");
 
-		ATSService obj = new ATSServiceImpl();
+		ATSService obj = new ATSServiceImplModified();
 
 		boolean isRegistered = obj.registration(user);
 

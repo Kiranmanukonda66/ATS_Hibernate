@@ -1,8 +1,9 @@
 package com.sri.ats.service.Impl;
 
-import java.util.Collections;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,18 +23,15 @@ public class ATSServiceImplModified implements ATSService {
 	private static final Logger logger = LogManager.getLogger(ATSServiceImplModified.class);
 	private static final Logger sensitiveLogger = LogManager.getLogger("sensitive");
 
+	// 180000ms means 3 mins
+	private static final long OPT_VALIDITY_DURATION = 3 * 60 * 1000;
+
 	@Override
 	public boolean registration(User user) {
 
-		logger.info("ATSSserviceImpl::registration::Input::{}", user);
-
 		sensitiveLogger.debug("ATSSserviceImpl::registration::Input::password={}", user.getPassword());
 
-		boolean isRegister = saveOrUpdate(user);
-
-		logger.info("ATSSserviceImpl::registration::output::isRegister={}", isRegister);
-
-		return isRegister;
+		return saveOrUpdate(user);
 	}
 
 	@Override
@@ -72,173 +70,162 @@ public class ATSServiceImplModified implements ATSService {
 	@Override
 	public Optional<User> getUser(String id) {
 
-		logger.info("ATSServiceImpl::getUser::input::userId={}", id);
-
-		Optional<User> user = getSingleObject(User.class, id);
-
-		logger.info("ATSServiceImpl::getUser::output::{}", user.orElse(null));
-
-		return user;
+		return getObject(User.class, id);
 	}
 
 	@Override
 	public boolean updateProfile(User user) {
 
-		logger.info("ATSServiceImpl::updateProfile::input::{}", user);
-
-		boolean isUpdated = saveOrUpdate(user);
-
-		logger.info("ATSServiceImpl::updateProfile::output::isUpdated={}", isUpdated);
-
-		return isUpdated;
+		return saveOrUpdate(user);
 	}
 
 	@Override
 	public boolean checkUsernameExists(String username) {
 
-		logger.info("ATSServiceImpl::chechUsernameExists::input::username={}", username);
-
-		boolean isUserNameExits = usernameAndEmailExist(username, null);
-
-		logger.info("ATSServiceImpl::chechUsernameExists::output::isUsernameExits={}", isUserNameExits);
-
-		return isUserNameExits;
+		return usernameAndEmailExist(username, null);
 	}
 
 	@Override
 	public boolean checkEmailExists(String email) {
 
-		logger.info("ATSServiceImpl::checkEmailExists::input::email={}", email);
+		return usernameAndEmailExist(null, email);
 
-		boolean isEmailExits = usernameAndEmailExist(null, email);
+	}
 
-		logger.info("ATSServiceImpl::checkEmailExists::output::isEmailExits={}", isEmailExits);
+	@Override
+	public String generateOtp(String userId) {
 
-		return isEmailExits;
+		String otp = null;
 
+		try {
+
+			Optional<User> user = getObject(User.class, userId);
+
+			if (user.isPresent()) {
+
+				// gives number between 100000 to 999999
+				otp = String.valueOf(new Random().nextInt(899999) + 100000);
+
+				user.get().setOtp(otp);
+
+				// system.currentTimeMillis()->will return the current time in milliseconds
+				user.get().setOtpGeneratedTime(new Timestamp(System.currentTimeMillis()));
+
+				saveOrUpdate(user.get());
+
+			}
+
+		} catch (Exception e) {
+
+			logger.error("ATSServiceImpl::generateOtp::Exception:{}", e.toString(), e);
+
+		}
+
+		return otp;
+	}
+
+	@Override
+	public boolean verifyOtp(String otp, String userId) {
+
+		boolean isVerified = false;
+
+		Optional<User> user = null;
+
+		try {
+
+			logger.info("ATSServiceImpl::verifyOtp::input::otp={},userid={}", otp, userId);
+
+			user = getObject(User.class, userId);
+
+			if (user.isPresent() && user.get().getOtp().equals(otp)) {
+
+				long timeDiff = System.currentTimeMillis() - user.get().getOtpGeneratedTime().getTime();
+
+				if (timeDiff <= OPT_VALIDITY_DURATION) {
+
+					user.get().setOtpVerified("yes");
+
+					user.get().setOtp(null);
+					user.get().setOtpGeneratedTime(null);
+
+					saveOrUpdate(user.get());
+
+					isVerified = true;
+
+				}
+
+			}
+
+			logger.info("ATSServiceImpl::verifyOtp::output::otpVerified={}", isVerified);
+
+		} catch (Exception e) {
+			logger.info("ATSServiceImpl::verifyOtp::Exception::{}", e.toString(), e);
+		}
+
+		return isVerified;
 	}
 
 	@Override
 	public boolean addApplication(Application application) {
 
-		logger.info("ATSServiceImpl::addApplication::input::{}", application);
-
-		boolean isAdded = saveOrUpdate(application);
-
-		logger.info("ATSServiceImpl::addApplication::output::isadded={}", isAdded);
-
-		return isAdded;
+		return saveOrUpdate(application);
 	}
 
 	@Override
 	public boolean editApplication(Application application) {
 
-		logger.info("ATSServiceImpl::editApplication::input::{}", application);
-
-		boolean isUpdated = saveOrUpdate(application);
-
-		logger.info("ATSServiceImpl::editApplication::output::isupdated={}", isUpdated);
-
-		return isUpdated;
+		return saveOrUpdate(application);
 	}
 
 	@Override
 	public boolean deleteApplication(String appId) {
 
-		logger.info("ATSServiceImpl::deleteApplication::input::applicationId={}", appId);
-
-		boolean isDeleted = deleteRecord(Application.class, appId);
-
-		logger.info("ATSServiceImpl::deleteApplication::output::isDelted={}", isDeleted);
-
-		return isDeleted;
+		return deleteRecord(Application.class, appId);
 
 	}
 
 	@Override
 	public Optional<List<Application>> getApplicationsByUserId(String userId, int pageNumber, int pageSize) {
 
-		logger.info("ATSServiceImpl::getApplicationsByUserId::input::userId={}", userId);
+		return getMultipleObjects(Application.class, userId, "user", pageNumber, pageSize);
 
-		Optional<List<Application>> result = getMultipleObjects(Application.class, userId, "user", pageNumber,
-				pageSize);
-
-		logger.info("ATSServiceImpl::getApplicationsByUserId::output::{}", result.orElse(Collections.emptyList()));
-
-		return result;
 	}
 
 	@Override
 	public Optional<Application> getApplication(String appId) {
 
-		logger.info("ATSServiceImpl::getApplication::input::appId={}", appId);
-
-		Optional<Application> result = getSingleObject(Application.class, appId);
-
-		logger.info("ATSServiceImpl::getApplication::output::{}", result.orElse(null));
-
-		return result;
+		return getObject(Application.class, appId);
 	}
 
 	@Override
 	public boolean addInterview(Interview interview) {
 
-		logger.info("ATSServiceImpl::addInterview::input::{}", interview);
-
-		boolean isAdded = saveOrUpdate(interview);
-
-		logger.info("ATSServiceImpl::addInterview::output::isadded={}", isAdded);
-
-		return isAdded;
+		return saveOrUpdate(interview);
 	}
 
 	@Override
 	public boolean editInterview(Interview interview) {
 
-		logger.info("ATSServiceImpl::editInterview::input::{}", interview);
-
-		boolean isUpdated = saveOrUpdate(interview);
-
-		logger.info("ATSServiceImpl::editInterview::output::isedited={}", isUpdated);
-
-		return isUpdated;
+		return saveOrUpdate(interview);
 	}
 
 	@Override
 	public boolean deleteInterview(String interviewId) {
 
-		logger.info("ATSServiceImpl::deleteInterview::input::interviewId={}", interviewId);
-
-		boolean isDeleted = deleteRecord(Interview.class, interviewId);
-
-		logger.info("ATSServiceImpl::deleteInterview::output::isDelted={}", isDeleted);
-
-		return isDeleted;
+		return deleteRecord(Interview.class, interviewId);
 
 	}
 
 	@Override
 	public Optional<Interview> getInterview(String interviewId) {
 
-		logger.info("ATSServiceImpl::getInterview::input::appId={}", interviewId);
-
-		Optional<Interview> result = getSingleObject(Interview.class, interviewId);
-
-		logger.info("ATSServiceImpl::getInterview::output::{}", result.orElse(null));
-
-		return result;
+		return getObject(Interview.class, interviewId);
 	}
 
 	@Override
 	public Optional<List<Interview>> getInterviewByUserId(String userId, int pageNumber, int pageSize) {
 
-		logger.info("ATSServiceImpl::getInterviewByUserId::input::userId={}", userId);
-
-		Optional<List<Interview>> result = getMultipleObjects(Interview.class, userId, "user", pageNumber, pageSize);
-
-		logger.info("ATSServiceImpl::getInterviewByUserId::output::{}", result.orElse(Collections.emptyList()));
-
-		return result;
+		return getMultipleObjects(Interview.class, userId, "user", pageNumber, pageSize);
 	}
 
 	/**
@@ -247,13 +234,28 @@ public class ATSServiceImplModified implements ATSService {
 	 * @param Object
 	 * @return true if it is saved or updated the record , false if not done
 	 */
+
+	/*
+	 * Thread.currentThread().getStackTrace() returns an array where:
+	 * 
+	 * [0] → getStackTrace method
+	 * 
+	 * [1] → current method (e.g., saveOrUpdate)
+	 * 
+	 * [2] → caller method (e.g., generateOtp or verifyOtp)
+	 * 
+	 */
 	private static boolean saveOrUpdate(Object object) {
 
 		boolean issaveOrUpdate = true;
 
 		Transaction transaction = null;
 
+		String callerMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			logger.info("ATSServiceImpl::{}::input::{}", callerMethodName, object);
 
 			transaction = session.beginTransaction();
 
@@ -273,6 +275,8 @@ public class ATSServiceImplModified implements ATSService {
 
 		}
 
+		logger.info("ATSServiceImpl::{}::output::issaveOrUpdate={}", callerMethodName, issaveOrUpdate);
+
 		return issaveOrUpdate;
 	}
 
@@ -285,13 +289,19 @@ public class ATSServiceImplModified implements ATSService {
 	 * @return Optional containing the object if found, or Optional.empty()
 	 *         otherwise
 	 */
-	private static <T> Optional<T> getSingleObject(Class<T> clazz, String id) {
+	private static <T> Optional<T> getObject(Class<T> clazz, String id) {
 
 		T object = null;
 
+		String callerMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
+			logger.info("ATSServiceImpl::{}::input::id={}", callerMethodName, id);
+
 			object = session.get(clazz, id);
+
+			logger.info("ATSServiceImpl::{}::output::{}", callerMethodName, object);
 
 			return Optional.ofNullable(object);
 
@@ -316,10 +326,16 @@ public class ATSServiceImplModified implements ATSService {
 
 		String hql = "from " + clazz.getSimpleName() + " t where t." + feildName + ".id = :userId";
 
+		String callerMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			logger.info("ATSServiceImpl::{}::input::id={},pageNumber={}", callerMethodName, id, pageNumber);
 
 			list = session.createQuery(hql, clazz).setParameter("userId", id)
 					.setFirstResult((pageNumber - 1) * pageSize).setMaxResults(pageSize).list();
+
+			logger.info("ATSServiceImpl::{}::output::{}", callerMethodName, list);
 
 			return Optional.ofNullable(list);
 
@@ -342,8 +358,12 @@ public class ATSServiceImplModified implements ATSService {
 
 		boolean isDeleted = true;
 
+		String callerMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+
 		Transaction transaction = null;
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			logger.info("ATSServiceImpl::{}::input::id={}", callerMethodName, id);
 
 			Object object = session.get(clazz, id);
 
@@ -365,6 +385,8 @@ public class ATSServiceImplModified implements ATSService {
 			isDeleted = false;
 		}
 
+		logger.info("ATSServiceImpl::{}::output::isDeleted={}", callerMethodName, isDeleted);
+
 		return isDeleted;
 
 	}
@@ -382,7 +404,11 @@ public class ATSServiceImplModified implements ATSService {
 
 		User user = null;
 
+		String callerMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			logger.info("ATSServiceImpl::{}::input::username={},email={}", callerMethodName, username, email);
 
 			Criteria criteria = session.createCriteria(User.class);
 
@@ -395,6 +421,8 @@ public class ATSServiceImplModified implements ATSService {
 			user = (User) criteria.uniqueResult();
 
 			isExits = (user != null);
+
+			logger.info("ATSServiceImpl::{}::output::isExists={}", callerMethodName, isExits);
 
 		} catch (Exception e) {
 			logger.error("ATSServiceImpl::usernameAndEmailExist::Exception::{}", e.toString(), e);

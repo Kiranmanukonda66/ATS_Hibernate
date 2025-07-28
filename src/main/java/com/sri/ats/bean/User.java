@@ -58,6 +58,18 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String mobile;
 
+	@Column(name = "otp", length = 10)
+	private String otp;
+
+	@Column(name = "otp_generated_time")
+	private java.sql.Timestamp otpGeneratedTime;
+
+	@Column(name = "otp_verified", length = 3)
+	private String otpVerified = "no";
+
+	@Column(name = "email_verified", length = 3)
+	private String emialVerified = "no";
+
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Application> applications;
 
@@ -66,8 +78,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [ fristName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + ", email="
-				+ email + ", username=" + username + "]";
+		return "User [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + ", email="
+				+ email + ", username=" + username + ", otp=" + otp + ", otpGeneratedTime=" + otpGeneratedTime
+				+ ", otpVerified=" + otpVerified + ", emialVerified=" + emialVerified + "]";
 	}
 
 	public String getId() {
@@ -148,6 +161,38 @@ public class User {
 
 	public void setInterviews(List<Interview> interviews) {
 		this.interviews = interviews;
+	}
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
+	public java.sql.Timestamp getOtpGeneratedTime() {
+		return otpGeneratedTime;
+	}
+
+	public void setOtpGeneratedTime(java.sql.Timestamp otpGeneratedTime) {
+		this.otpGeneratedTime = otpGeneratedTime;
+	}
+
+	public String getOtpVerified() {
+		return otpVerified;
+	}
+
+	public void setOtpVerified(String otpVerified) {
+		this.otpVerified = otpVerified;
+	}
+
+	public String getEmialVerified() {
+		return emialVerified;
+	}
+
+	public void setEmialVerified(String emialVerified) {
+		this.emialVerified = emialVerified;
 	}
 
 }

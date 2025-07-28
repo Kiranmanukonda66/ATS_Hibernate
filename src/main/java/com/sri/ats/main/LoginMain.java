@@ -1,22 +1,18 @@
 package com.sri.ats.main;
 
 import com.sri.ats.service.ATSService;
-import com.sri.ats.service.Impl.ATSServiceImpl;
+import com.sri.ats.service.Impl.ATSServiceImplModified;
 
 public class LoginMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ATSService obj = new ATSServiceImpl();
+		ATSService obj = new ATSServiceImplModified();
 
-		boolean islogin = obj.login("kiran", "kiran12");
+		boolean otp = obj.verifyOtp("405190", "cab0fd4f-7995-4ed0-9019-b446f274540b");
 
-		if (islogin) {
-			System.out.println("user logged in sucessfully");
-		} else {
-			System.out.println("usre login is failed");
-		}
+		System.out.println(otp);
 
 	}
 
